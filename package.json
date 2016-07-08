@@ -12,18 +12,28 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "angular2-template-loader": "^0.4.0",
-    "awesome-typescript-loader": "^1.1.1",
+    "typescript": "~1.8.9",
+    "typings": "~1.0.3",
+
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0",
+    "webpack-merge": "^0.8.4",
+    
+    "copy-webpack-plugin": "^3.0.1",
+    "ts-loader": "^0.8.2",
+    "less-loader": "^2.2.3",
     "css-loader": "^0.23.1",
+    "postcss-loader": "^0.9.1",
     "json-loader": "^0.5.4",
     "raw-loader": "^0.5.1",
     "source-map-loader": "^0.1.5",
     "to-string-loader": "^1.1.4",
-    "typescript": "~1.8.9",
-    "typings": "~1.0.3",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0",
-    "webpack-merge": "^0.8.4"
+    
+    "autoprefixer": "^6.3.6",
+    "precss": "^1.4.0",
+    "less": "^2.7.1",
+    
+    "glob": "^7.0.5"
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.4",
@@ -52,7 +62,8 @@
     "d3-shape": "^1.0.0",
     "d3-transition": "^1.0.0",
 
-    "react": "^15.1.0"
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
   },
   "repository": {
     "type": "git",

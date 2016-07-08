@@ -1,13 +1,27 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const precss = require('precss');
+const glob = require('glob');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const assets = ['ico', 'svg', 'jpg', 'json', 'html'].reduce((files, extension) => {
+  return glob.sync(`src/**/*.${extension}`).reduce((files, file) => {
+    if (/.component.html/.test(file)) return files;
+    files.push({
+      from: file,
+      to: file.replace('src/', '')
+    });
+    return files;
+  }, files)
+}, [])
 
 // Webpack Config
-var webpackConfig = {
+const webpackConfig = {
   entry: {
     'polyfills': './src/polyfills.browser.ts',
     'vendor':    './src/vendor.browser.ts',
-    'main':       './src/main.browser.ts'
+    'main':      './src/main.browser.ts'
   },
 
   output: {
@@ -16,25 +30,34 @@ var webpackConfig = {
 
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity })
+    new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity }),
+    new CopyWebpackPlugin(assets)
   ],
-
+  
+  resolve: {
+    root: [ path.join(__dirname, 'src') ],
+    extensions: ['', '.ts', '.tsx', '.js', '.json']
+  },
+  
   module: {
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'] },
-      { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
+      { test: /\.ts$/, loaders: ['ts-loader'] },
+      { test: /\.tsx$/, loaders: ['ts-loader'] },
+      { test: /\.css$/, loaders: ['to-string-loader', 'css-loader', 'postcss-loader'] },
+      { test: /\.less$/, loaders: ['to-string-loader', 'css-loader', 'postcss-loader', 'less-loader'] },
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.json$/, loader: 'json-loader' }
 
     ]
-  }
+  },
 
-};
+  postcss: () => [autoprefixer, precss]
+}
 
 
 // Our Webpack Defaults
-var defaultConfig = {
+const defaultConfig = {
   devtool: 'cheap-module-source-map',
   cache: true,
   debug: true,
@@ -62,12 +85,7 @@ var defaultConfig = {
       path.join(__dirname, 'node_modules', 'angular2', 'bundles')
     ]
   },
-
-  resolve: {
-    root: [ path.join(__dirname, 'src') ],
-    extensions: ['', '.ts', '.js', '.json']
-  },
-
+  
   devServer: {
     historyApiFallback: true,
     watchOptions: { aggregateTimeout: 300, poll: 1000 }
@@ -83,5 +101,5 @@ var defaultConfig = {
   }
 }
 
-var webpackMerge = require('webpack-merge');
+const webpackMerge = require('webpack-merge');
 module.exports = webpackMerge(defaultConfig, webpackConfig);

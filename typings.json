@@ -13,11 +13,12 @@
     "d3-scale": "registry:npm/d3-scale#1.0.0+20160707082208",
     "d3-selection": "registry:npm/d3-selection#1.0.0+20160701011035",
     "d3-shape": "registry:npm/d3-shape#1.0.0+20160701011035",
-    "d3-transition": "registry:npm/d3-transition#1.0.0+20160701011035",
-    "react": "registry:npm/react#15.0.1+20160601175240"
+    "d3-transition": "registry:npm/d3-transition#1.0.0+20160701011035"
   },
   "globalDependencies": {
     "core-js": "registry:dt/core-js#0.0.0+20160602141332",
-    "node": "registry:dt/node#6.0.0+20160621231320"
+    "node": "registry:dt/node#6.0.0+20160621231320",
+    "react": "registry:dt/react#0.14.0+20160630100702",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
   }
 }

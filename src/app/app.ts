@@ -6,7 +6,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   pipes: [],
   providers: [],
   directives: [ ROUTER_DIRECTIVES ],
-  templateUrl: './app.html',
+  template: require('./app.html'),
 })
 export class App {
   constructor() {}
