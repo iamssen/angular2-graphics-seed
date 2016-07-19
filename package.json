@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "ie-shim": "^0.1.0",
-    "core-js": "^2.2.0",
+    "core-js": "^2.4.1",
     "zone.js": "~0.6.12",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
@@ -58,7 +58,8 @@
     "@angular/platform-browser": "2.0.0-rc.4",
     "@angular/platform-browser-dynamic": "2.0.0-rc.4",
     "@angular/platform-server": "2.0.0-rc.4",
-    "@angular/router": "3.0.0-beta.2"
+    "@angular/router": "3.0.0-beta.2",
+    "@angular/forms": "0.2.0"
   },
   "repository": {
     "type": "git",
