@@ -13,6 +13,6 @@ module.exports = {
     "d3-shape": "^1.0.1",
     "d3-transition": "^1.0.0",
   
-    "types.d3": "^0.1.0",
+    "types.d3": "^0.1.1",
   }
 }
