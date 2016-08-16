@@ -72,6 +72,6 @@
   "homepage": "https://github.com/iamssen/angular2-graphics-seed",
   "upstream": {
     "git": "https://github.com/angular/angular2-seed.git",
-    "hash": "1e9782ffe8476b500d13c0bf0b42539e7e6b6cfc"
+    "hash": "8200cb0826405d82a488878da4aee80d44d7bd10"
   }
 }
