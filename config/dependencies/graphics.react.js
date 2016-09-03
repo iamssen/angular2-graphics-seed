@@ -1,9 +1,9 @@
 module.exports = {
   "dependencies": {
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
   
-    "@types/react": "^0.14.29",
-    "@types/react-dom": "^0.14.14",
+    "@types/react": "^0.14.33",
+    "@types/react-dom": "^0.14.16",
   }
 }

@@ -10,8 +10,8 @@ module.exports = {
     "d3-polygon": "^1.0.1",
     "d3-scale": "^1.0.3",
     "d3-selection": "^1.0.2",
-    "d3-shape": "^1.0.2",
-    "d3-transition": "^1.0.1",
+    "d3-shape": "^1.0.3",
+    "d3-transition": "^1.0.2",
   
     "types.d3": "^0.1.1",
   }

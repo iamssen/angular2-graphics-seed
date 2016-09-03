@@ -1,7 +1,7 @@
 module.exports = {
   "devDependencies": {
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1",
     "webpack-merge": "^0.14.1",
   
     "copy-webpack-plugin": "^3.0.1",

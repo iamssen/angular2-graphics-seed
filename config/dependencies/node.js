@@ -1,5 +1,5 @@
 module.exports = {
   "devDependencies": {
-    "glob": "^7.0.5",
+    "glob": "^7.0.6",
   }
 }
